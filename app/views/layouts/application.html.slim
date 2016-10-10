@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Domaino Dashboard
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+
+body
+  = render 'boomerang'
+
+  br
+  br
+  br
+
+  .main.ui.divided.grid.container
+    .row
+      .twelve.wide.column
+        = yield
+      .four.wide.column
+        = render 'sidebar'

@@ -1,0 +1,29 @@
+h2.ui.header
+  i.ui.circular.alarm.icon
+  .content Notifications
+
+= render 'notification_settings'
+
+.ui.hidden.divider
+
+.ui.right.floated
+  button#rescan_domains.ui.right.floated.icon.button(style="margin-top: 26px")
+    i.refresh.icon
+
+h2.ui.header
+  i.ui.circular.list.icon
+  .content Monitored Domains
+
+
+javascript:
+  var responseModal = riot.mount('response-handler-modal')[0];
+  var domainsTable = riot.mount('domains-table', Backend)[0];
+
+  Backend.watch("#{@portal.id}");
+
+  $('button#post_test_alert').api({
+    action: 'test alert',
+    onResponse: responseModal.onResponse
+  });
+
+  $('button#rescan_domains').api({ action: 'rescan domains'});

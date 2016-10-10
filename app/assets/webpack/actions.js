@@ -1,0 +1,1 @@
+export const DOMAINS_LOADED = "DOMAINS_LOADED"

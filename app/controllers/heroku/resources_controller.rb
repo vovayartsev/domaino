@@ -1,0 +1,43 @@
+module Heroku
+  class ResourcesController < BaseController
+    include Concerns::HerokuAuth
+    before_action :ensure_basic_auth!
+
+    respond_to :json
+
+    def show
+      sso
+    end
+
+    def create
+      resource = Resource.create!(resource_params.to_h)
+
+      render json: {
+        :id => resource.id,
+        :config => {},
+        :message => 'Successfully installed'
+      }
+    end
+
+    def update
+      resource = Resource.find(params[:id])
+      resource.update!(resource_params.to_h)
+      head 200
+    end
+
+    def destroy
+      resource = Resource.find(params[:id])
+      resource.destroy
+      head 200
+    end
+
+    private
+
+    def resource_params
+      params.
+        require(:resource).
+        permit(:heroku_id, :uuid, :plan, :callback_url, :logplex_token, :region, :options).
+        slice('heroku_id', 'uuid', 'plan')
+    end
+  end
+end
