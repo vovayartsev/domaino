@@ -32,6 +32,7 @@ gem 'whois'
 gem 'slim-rails'
 gem 'sucker_punch'
 gem 'trailblazer-rails'
+gem 'multi_json'
 
 group :development, :test do
   gem 'pry'
