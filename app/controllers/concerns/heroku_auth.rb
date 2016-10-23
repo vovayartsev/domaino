@@ -20,7 +20,7 @@ module Concerns::HerokuAuth
     cookies[:'heroku-nav-data'] = params['nav-data']
     session[:heroku_sso] = params['nav-data']
     session[:email] = params[:email]
-    session[:resource_id] = resource.id
+    cookies.signed[:portal_id] = resource.id
 
     redirect_to '/dashboard'
   end

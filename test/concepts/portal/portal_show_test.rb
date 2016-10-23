@@ -14,7 +14,7 @@ class PortalTest < ActiveSupport::TestCase
   }.deep_stringify_keys
 
   test "shows portal with domains" do
-    hash = JSON.parse Portal::Show.(id: portals(:one).id).to_json
+    hash = JSON.parse Portal::Show.(id: portals(:vova).id).to_json
 
     assert_equal 'vovayartsev@gmail.com', hash['email']
     assert_instance_of Array, hash['domains']

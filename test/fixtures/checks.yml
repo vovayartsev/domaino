@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  domain: google
+  kind: 1
+  last_scan_requested_at: 2016-10-13 01:49:02
+  last_scan_at: 2016-10-13 01:49:02
+  status: 1

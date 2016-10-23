@@ -1,6 +1,7 @@
 import { take, call, put, fork, select } from 'redux-saga/effects'
 import { takeLatest, delay, eventChannel } from 'redux-saga'
 import {DOMAINS_LOADED} from './actions'
+import cableSaga from './sagas/cable'
 
 const SAMPLE_LIST = [
   {
@@ -26,12 +27,13 @@ const SAMPLE_LIST = [
   }
 ]
 
-function* domainsSaga() {
-  yield delay(2000)
-  yield put({type: DOMAINS_LOADED, list: SAMPLE_LIST})
-  console.log('DONE')
-}
+// function* domainsSaga() {
+//   yield delay(2000)
+//   yield put({type: DOMAINS_LOADED, list: SAMPLE_LIST})
+//   console.log('DONE')
+// }
 
 export default function* () {
-  yield fork(domainsSaga)
+  // yield fork(domainsSaga)
+  yield fork(cableSaga)
 }

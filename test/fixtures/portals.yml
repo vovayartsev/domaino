@@ -4,8 +4,7 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
+vova:
   plan: 'test'
   email: 'vovayartsev@gmail.com'
   heroku_uuid: '123123123123123123123123123123123123123123123123'
-  

@@ -4,21 +4,26 @@ class Portal::DomainsTreeRepresenter < Representable::Decorator
   include Representable::JSON
 
   property :email
-  property :domains, exec_context: :decorator
+  property :type, exec_context: :decorator
+  property :list, exec_context: :decorator
 
   private
 
-  def domains
+  def list
     [{
       name: 'google.com',
       ssl: {
         status: 'ok',
-        expiration: '2017-01-01'
+        expiration: '2017-01-02'
       },
       dns: {
         status: 'warning',
-        expiration: '2016-10-01'
+        expiration: '2016-10-03'
       }
     }]
+  end
+
+  def type
+    "DOMAINS_LOADED"
   end
 end
