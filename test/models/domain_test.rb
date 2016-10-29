@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class DomainTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
+  # test "with latest checks" do
   # end
 end

@@ -16,13 +16,14 @@ ActiveRecord::Schema.define(version: 20161012214902) do
   enable_extension "plpgsql"
 
   create_table "checks", force: :cascade do |t|
-    t.integer  "domain_id",              null: false
-    t.integer  "kind"
+    t.integer  "domain_id",                          null: false
+    t.integer  "kind",                               null: false
     t.datetime "last_scan_requested_at"
     t.datetime "last_scan_at"
-    t.integer  "status"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "status",                 default: 0, null: false
+    t.date     "expiration"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.index ["domain_id"], name: "index_checks_on_domain_id", using: :btree
   end
 

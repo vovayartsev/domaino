@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class CheckTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "default status" do
+    check = Check.create(domain: domains(:apple), kind: :ssl)
+    assert check.scanning?
+  end
 end
