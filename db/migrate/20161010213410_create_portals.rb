@@ -4,7 +4,7 @@ class CreatePortals < ActiveRecord::Migration[5.0]
       t.string :plan
       t.string :email
       t.string :heroku_uuid
-      t.integer :lock_version
+      # t.integer :lock_version
 
       t.timestamps
     end

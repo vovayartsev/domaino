@@ -39,9 +39,8 @@ ActiveRecord::Schema.define(version: 20161012214902) do
     t.string   "plan"
     t.string   "email"
     t.string   "heroku_uuid"
-    t.integer  "lock_version"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
