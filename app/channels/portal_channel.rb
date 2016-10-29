@@ -7,6 +7,6 @@ class PortalChannel < ApplicationCable::Channel
   private
 
   def redux_action
-    Portal::Show.(id: current_portal.id)
+    Portal::Show::Redux.(id: current_portal.id)
   end
 end

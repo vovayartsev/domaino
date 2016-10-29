@@ -4,6 +4,9 @@ class Portal::Show < Trailblazer::Operation
   class Redux < self
     include Representer
     representer Portal::ReduxRepresenter
+    def as_json(*)
+      self.class.representer.new(model).as_json
+    end
   end
 
   include Model
