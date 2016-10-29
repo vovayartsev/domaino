@@ -1,16 +1,15 @@
 class Portal::StartScan < Trailblazer::Operation
+  include Model
+  model Portal, :find
+
   def process(params)
-    resource = Resource.find(params[:id])
-
-    heroku_domains = HerokuApiService.get_domains(resource.id)
-    resource.sync_heroku_domains_list! heroku_domains
-    ResourceCamera.take_snapshot(resource)
-
-    resource.domain_names.each do |domain_name|
-      RescanJob.perform_later(domain_name)
+    heroku_domains = HerokuApiService.get_domains(model.id)
+    model.set_domains_list! heroku_domains
+    model.domains.each do |domain|
+      domain.checks.each do |check|
+        check.scanning!
+        RescanJob.perform_later(check.id)
+      end
     end
   end
-
-  private
-
 end
