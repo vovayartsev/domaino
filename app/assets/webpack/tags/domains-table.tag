@@ -27,9 +27,11 @@
         </td>
         <td class={ dns.class }>
           { dns.message }
+          <div class="ui centered inline active mini loader" if={ dns.loading }/>
         </td>
         <td class={ ssl.class }>
           { ssl.message }
+          <div class="ui centered inline active mini loader" if={ ssl.loading }/>
         </td>
       </tr>
     </tbody>

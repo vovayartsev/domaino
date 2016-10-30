@@ -18,11 +18,10 @@
 
       <tr>
         <td>
-          E-mail
+          Heroku e-mail
         </td>
         <td>
           { opts.email }
-          (<a class="right floated" href="#">configure...</a>)
         </td>
         <td>
           <div class="ui fitted toggle checkbox">
@@ -34,12 +33,25 @@
 
       <tr>
         <td>
+          Additional e-mails
+        </td>
+        <td class="disabled">
+          Not configured
+        </td>
+        <td>
+          <a href="#">configure...</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
           SMS
         </td>
         <td class="disabled">
-          Not available yet...
+          Not configured
         </td>
         <td>
+          <a href="#">configure...</a>
         </td>
       </tr>
 
@@ -48,9 +60,10 @@
           Human Intelligence
         </td>
         <td class="disabled">
-          Not available yet...
+          Not configured
         </td>
         <td>
+          <a href="#">configure...</a>
         </td>
       </tr>
 

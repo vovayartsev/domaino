@@ -3,10 +3,17 @@ const OK = 'ok'
 const WARNING = 'warning'
 const EXPIRED = 'expired'
 const NA = 'na'
+const SCANNING = 'scanning'
 
 export function mapDomainsTableCell(cell) {
-  console.log(cell.status)
   switch(cell.status){
+    case SCANNING:
+      return {
+        class: "disabled",
+        loading: true,
+        message: ""
+      }
+
     case OK:
       return {
         class: 'positive',

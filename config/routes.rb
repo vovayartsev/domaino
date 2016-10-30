@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   Dashboard::Engine.routes.draw do
     root to: 'pages#show'
     resource :portal, only: [:show]
+    resources :scans, only: [:create]
   end
 
   mount Heroku::Engine => '/heroku', as: 'heroku'

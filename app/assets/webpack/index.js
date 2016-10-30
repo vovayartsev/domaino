@@ -5,7 +5,7 @@ import 'babel-polyfill'
 import 'semantic-ui-css/semantic.css';
 import './tags'  // riot
 
-import $ from 'jquery'
+import $ from 'jquery';
 
 import riot from 'riot'
 import { createStore, applyMiddleware } from 'redux'

@@ -1,27 +1,29 @@
 h2.ui.header
-  i.ui.circular.at.icon
-  .content Monitored Domains
-
-p
-  | The table below contains domain names associated with your Heroku application.
-  |  We refresh this list and update expiration dates automatically on regular basis,
-  |  but you can force re-scan by clicking this button:
-  rescan-domains-button<>
-
-domains-table
-
-br
-
-h2.ui.header
   i.ui.circular.announcement.icon
   .content Alerts
 
 p
   | If one of your domains is going to expire,
-  |  we'll start sending you warning e-mails 1 month before the deadline.
-  br
-  |  Custom notification settings (including SMS notifications and human inteligence)
-  |  are available on
-  a<> href="#" paid plans
+  |  we'll start sending you notifications e-mails 1 month before the deadline.
+  //br
+  //|  Custom notification settings (including SMS notifications and human inteligence)
+  //|  are available on
+  //a<> href="#" paid plans
 
 notification-settings-table email=@heroku_email
+
+br
+
+h2.ui.header
+  i.ui.circular.at.icon
+  .content Monitored Domains
+
+p
+  | The table below contains domain names associated with your Heroku application.
+  |  Add more to the list using
+  a<> href="https://devcenter.heroku.com/articles/custom-domains" target="_blank" Heroku custom domains feature
+  |.  We refresh this list and update expiration dates automatically on regular basis,
+  |  but you can force re-scan by clicking this button:
+  rescan-domains-button<>
+
+domains-table

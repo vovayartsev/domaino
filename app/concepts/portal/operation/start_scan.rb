@@ -1,4 +1,6 @@
 class Portal::StartScan < Trailblazer::Operation
+  include Responder
+
   include Model
   model Portal, :find
 
