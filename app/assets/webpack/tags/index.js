@@ -1,5 +1,5 @@
 import './domains-table.tag'
 import './rescan-domains-button.tag'
 import './notification-settings-table.tag'
-import './configure-additional-emails.tag'
+// import './configure-additional-emails.tag'
 import './configuration-form.tag'

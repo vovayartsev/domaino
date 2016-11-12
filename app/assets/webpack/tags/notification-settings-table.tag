@@ -47,8 +47,8 @@
         <td>
           SMS
         </td>
-        <td class="disabled">
-          Not configured
+        <td class={ disabled: !sms_recepient }>
+          { sms_recepient || "Not configured" }
         </td>
         <td>
           <configuration-form title="SMS Settings"/>

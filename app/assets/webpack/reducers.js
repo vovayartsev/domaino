@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { merge, pick } from 'ramda';
-import { DOMAINS_LOADED, UPDATE_SETTINGS } from './actions';
+import { DOMAINS_LOADED, SETTINGS_CHANNEL } from './actions';
 
 const DEFAULT_DOMAINS_STATE = {
   loaded: false,
@@ -23,8 +23,8 @@ function domainsReducer(state = DEFAULT_DOMAINS_STATE, action) {
 
 function settingsReducer(state = DEFAULT_SETTINGS_STATE, action) {
   switch (action.type) {
-    case UPDATE_SETTINGS:
-      return merge(state, action.patch)
+    case SETTINGS_CHANNEL:
+      return merge(state, action.representation)
     default:
       return state;
   }

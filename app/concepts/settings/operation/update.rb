@@ -1,6 +1,6 @@
 class Settings::Update < Trailblazer::Operation
   contract do
-    property :sms_recepients
+    property :sms_recepient # TODO: validation
   end
 
   include Model

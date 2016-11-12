@@ -1,4 +1,4 @@
-<configure-additional-emails>
+<%-- <configure-additional-emails>
   <a href="javascript: void(0);" onclick={ onclick }>configure...</a>
 
   <div class="ui modal">
@@ -39,4 +39,4 @@
       .modal('show')
   }
   </script>
-</configure-additional-emails>
+</configure-additional-emails> --%>

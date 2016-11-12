@@ -25,9 +25,15 @@
   this.onclick = function() {
     this.content.innerHTML = "Loading..."
 
-    // loading the form from server
+    // loading the FORM from the server
     fetchHtml('/settings/sms/edit').then(html => {
       this.content.innerHTML = html
+
+      // clicking ENTER within the form should not result in a regular POST
+      $("form", this.content).submit((e) => {
+        e.preventDefault();
+        $('.ui.confirmation.button', this.root).click();
+      })
     });
 
     $('.ui.modal', this.root).modal({detachable: false}).modal('show');

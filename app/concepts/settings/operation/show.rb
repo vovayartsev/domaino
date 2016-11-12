@@ -5,7 +5,7 @@ class Settings::Show < Trailblazer::Operation
     include Representer
     representer do
       include Representable::JSON
-      property :sms_recepients
+      property :sms_recepient
     end
   end
 
