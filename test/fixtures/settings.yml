@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+vova_settings:
+  portal: vova
+  sms_recepients: "+1-555-5555555"

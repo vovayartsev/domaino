@@ -4,7 +4,8 @@ var webpack = require('webpack');
 var config = {
   plugins: [
     new webpack.ProvidePlugin({
-      riot: 'riot'
+      riot: 'riot',
+      jQuery: 'jquery'
     })
   ],
   module: {

@@ -21,7 +21,7 @@
           Heroku e-mail
         </td>
         <td>
-          { opts.email }
+          { opts.email } TODO: merge with Additional
         </td>
         <td>
           <div class="ui fitted toggle checkbox">
@@ -35,11 +35,11 @@
         <td>
           Additional e-mails
         </td>
-        <td class="disabled">
-          Not configured
+        <td class={ disabled: !customEmails } >
+          { customEmails || "Not configured" }
         </td>
         <td>
-          <a href="#">configure...</a>
+          <configure-additional-emails/>
         </td>
       </tr>
 
@@ -51,10 +51,9 @@
           Not configured
         </td>
         <td>
-          <a href="#">configure...</a>
+          <configuration-form title="SMS Settings"/>
         </td>
       </tr>
-
       <tr>
         <td>
           Human Intelligence
@@ -71,6 +70,8 @@
   </table>
 
   <script>
+  import {settingsSelector} from '../selectors'
+  this.subscribe(settingsSelector)
   </script>
 
 </notification-settings-table>

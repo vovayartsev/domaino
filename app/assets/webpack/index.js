@@ -2,10 +2,12 @@
 // Just remember to install the corresponding NPM package ;)
 
 import 'babel-polyfill'
+import 'whatwg-fetch'
+
 import 'semantic-ui-css/semantic.css';
 import './tags'  // riot
 
-import $ from 'jquery';
+import $ from './jq' // custom jQuery + plugins
 
 import riot from 'riot'
 import { createStore, applyMiddleware } from 'redux'
@@ -19,6 +21,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
   rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(sagaMiddleware)
 )
 

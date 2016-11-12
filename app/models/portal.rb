@@ -1,5 +1,6 @@
 class Portal < ApplicationRecord
   has_many :domains, dependent: :destroy
+  has_one :settings
 
   def set_domains_list!(domain_names)
     current_names = domains.map(&:name)

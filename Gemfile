@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'eventmachine'
 gem 'em-hiredis'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -35,6 +36,9 @@ gem 'whois'
 gem 'slim-rails'
 gem 'sucker_punch'
 gem 'trailblazer-rails'
+gem 'trailblazer-cells'
+gem 'cells-slim'
+gem "cells-rails"
 gem 'multi_json'
 
 group :development, :test do
@@ -44,6 +48,7 @@ end
 group :development do
   gem 'web-console'
   gem 'listen'
+  gem 'mocha'
   # gem 'spring'
   # gem 'spring-watcher-listen'
 end

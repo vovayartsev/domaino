@@ -10,7 +10,11 @@ function subscribe(channel) {
   })
 }
 
+function* plugIntoRedux(name) {
+  yield takeLatest(subscribe(name), put)
+}
+
 export default function* cableSaga() {
-  const channel = subscribe("PortalChannel")
-  yield takeLatest(channel, put)
+  yield fork(plugIntoRedux, "PortalChannel")
+  yield fork(plugIntoRedux, "SettingsChannel")
 }

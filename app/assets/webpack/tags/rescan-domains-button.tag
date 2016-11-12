@@ -5,15 +5,13 @@
   </button>
 
   <script>
-    import $ from 'jquery';
-    const api = require('semantic-ui-api');
+    import $ from '../jq';
 
     this.on('mount', function(){
-      const button = $('button', this.root);
-      api.call(button, {
+      $('button', this.root).api({
         url: '/scans.json',
         method: 'POST'
-      });
+      })
     })
   </script>
 </rescan-domains-button>

@@ -3165,6 +3165,18 @@ semantic-ui-css@^2.2.4:
   dependencies:
     jquery x.*
 
+semantic-ui-dimmer:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/semantic-ui-dimmer/-/semantic-ui-dimmer-2.2.3.tgz#a038dfce488cfb732aecce0598ea253de340a875"
+
+semantic-ui-modal:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/semantic-ui-modal/-/semantic-ui-modal-2.2.3.tgz#aee5cc75bee3891241e76c19ede563be63dcfb56"
+
+semantic-ui-transition:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/semantic-ui-transition/-/semantic-ui-transition-2.2.3.tgz#4bf150aacf91227ac460f4622be34146baf8d04c"
+
 semver@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
@@ -3646,6 +3658,10 @@ websocket-driver@>=0.5.1:
 websocket-extensions@>=0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.1.tgz#76899499c184b6ef754377c2dbb0cd6cb55d29e7"
+
+whatwg-fetch:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-1.0.0.tgz#01c2ac4df40e236aaa18480e3be74bd5c8eb798e"
 
 whet.extend@~0.9.9:
   version "0.9.9"
