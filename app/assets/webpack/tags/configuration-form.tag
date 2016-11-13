@@ -26,7 +26,7 @@
     this.content.innerHTML = "Loading..."
 
     // loading the FORM from the server
-    fetchHtml('/settings/sms/edit').then(html => {
+    fetchHtml(`/settings/${this.opts.cell}/edit`).then(html => {
       this.content.innerHTML = html
 
       // clicking ENTER within the form should not result in a regular POST

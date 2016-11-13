@@ -2,7 +2,8 @@ require 'test_helper'
 
 class SettingsShowTest < ActiveSupport::TestCase
   EXPECTED_RESULT = {
-    sms_recepient: "+1-555-5555555"
+    sms_recepient: "+1-555-5555555",
+    emails: ['vovayartsev@gmail.com']  # leaking from portal
   }.deep_stringify_keys
 
   test "shows portal with domains" do

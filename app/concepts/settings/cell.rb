@@ -5,6 +5,12 @@ class Settings::Cell < Trailblazer::Cell
   class Sms < self
   end
 
+  class Email < self
+  end
+
+  class Human < self
+  end
+
   private
 
   def settings_path(settings)

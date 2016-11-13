@@ -46,8 +46,10 @@ ActiveRecord::Schema.define(version: 20161030202727) do
   create_table "settings", force: :cascade do |t|
     t.integer  "portal_id"
     t.string   "sms_recepient"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "additional_emails"
+    t.text     "human_intelligence"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end
