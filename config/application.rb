@@ -10,5 +10,6 @@ module Domaino
   class Application < Rails::Application
     config.eager_load_paths += Dir[ Rails.root.join('lib') ]
     config.action_cable.mount_path = '/cable'
+    config.action_cable.allowed_request_origins = [/localhost/, /domaino/]
   end
 end
