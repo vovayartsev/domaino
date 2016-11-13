@@ -1,2 +1,6 @@
+p
+  | Alerts will be sent to your Heroku email:
+  = " " + mail_to(heroku_email)
+
 = simple_form_for model do |f|
   = f.input :additional_emails, placeholder: "List of emails separated by spaces or commas"

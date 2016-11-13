@@ -6,6 +6,7 @@ class Settings::Cell < Trailblazer::Cell
   end
 
   class Email < self
+    property :heroku_email
   end
 
   class Human < self
