@@ -14,7 +14,8 @@ function* plugIntoRedux(name) {
   yield takeLatest(subscribe(name), put)
 }
 
-export default function* cableSaga() {
-  yield fork(plugIntoRedux, "PortalChannel")
-  yield fork(plugIntoRedux, "SettingsChannel")
+export default function* cableSaga(channels) {
+  for (let i = 0; i < channels.length; ++i) {
+    yield fork(plugIntoRedux, channels[i]);
+  }
 }

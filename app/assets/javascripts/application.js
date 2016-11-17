@@ -11,4 +11,4 @@
 // about supported directives.
 //
 
-//= require_webpack_tree ../webpack
+//= require_webpack_tree .

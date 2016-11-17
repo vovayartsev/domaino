@@ -6,6 +6,6 @@ class RescanJob < ApplicationJob
     puts "SCANNING: #{check.inspect}"
     sleep rand(3)
     check.update!(status: 'ok')
-    PortalChannel.broadcast_to(check.domain.portal, {})
+    DomainsListChannel.broadcast_to(check.domain.portal, {})
   end
 end

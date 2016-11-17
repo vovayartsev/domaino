@@ -23,6 +23,6 @@ class Portal::StartScan < Trailblazer::Operation
   end
 
   def notify!
-    PortalChannel.broadcast_to(model, {})
+    DomainsListChannel.broadcast_to(model, {})
   end
 end
