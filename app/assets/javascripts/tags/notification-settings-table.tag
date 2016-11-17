@@ -14,7 +14,13 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody if={ !loaded }>
+      <tr> <td colspan="3" style="height: 140px; text-align: center">
+        <div class="ui text inline loader {active: !loaded}">Loading</div>
+      </td> </tr>
+    </tbody>
+
+    <tbody if={ loaded }>
 
       <tr>
         <td>

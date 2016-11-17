@@ -9,7 +9,8 @@ const DEFAULT_DOMAINS_STATE = {
 
 const DEFAULT_SETTINGS_STATE = {
   herokuEmailNotifications: true,
-  customEmails: ""
+  customEmails: "",
+  loaded: false
 }
 
 function domainsReducer(state = DEFAULT_DOMAINS_STATE, action) {
@@ -24,7 +25,7 @@ function domainsReducer(state = DEFAULT_DOMAINS_STATE, action) {
 function settingsReducer(state = DEFAULT_SETTINGS_STATE, action) {
   switch (action.type) {
     case SETTINGS_CHANNEL:
-      return merge(state, action.representation)
+      return merge(state, {loaded: true, ...action.representation})
     default:
       return state;
   }
