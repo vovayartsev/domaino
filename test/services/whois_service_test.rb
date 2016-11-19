@@ -2,7 +2,7 @@ require 'test_helper'
 
 class WhoisServiceTest < ActiveSupport::TestCase
   test "valid domain" do
-    result = enquire('ya.ru')
+    result = enquire('dockhero.io')
     assert_equal true, result.valid
     assert_equal true, result.paid_till > Date.today
   end

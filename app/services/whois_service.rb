@@ -18,8 +18,9 @@ class WhoisService
       map{|l| l.split(/:\s+/)}
 
     hash = Hash[parts]
-    if hash.has_key? "paid-till"
-      Result.new(true, Date.parse(hash['paid-till']), nil)
+    expiry = hash['Expiry'] || hash['paid-till']
+    if expiry
+      Result.new(true, Date.parse(expiry), nil)
     else
       Result.new(false, nil, RuntimeError.new("Domain not found"))
     end
