@@ -1,5 +1,5 @@
 class WhoisService
-  Result = Struct.new(:valid, :paid_till)
+  Result = Struct.new(:valid, :paid_till, :error)
 
   def initialize
     @api_key = ENV.fetch('WHOIS_API_KEY')
@@ -19,9 +19,9 @@ class WhoisService
 
     hash = Hash[parts]
     if hash.has_key? "paid-till"
-      Result.new(true, Date.parse(hash['paid-till']))
+      Result.new(true, Date.parse(hash['paid-till']), nil)
     else
-      Result.new(false, nil)
+      Result.new(false, nil, RuntimeError.new("Domain not found"))
     end
   end
 end

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161030202727) do
     t.datetime "last_scan_at"
     t.integer  "status",                 default: 0, null: false
     t.date     "expiration"
+    t.string   "error_message"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.index ["domain_id"], name: "index_checks_on_domain_id", using: :btree
