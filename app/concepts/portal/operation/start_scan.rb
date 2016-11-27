@@ -17,7 +17,7 @@ class Portal::StartScan < Trailblazer::Operation
     model.domains.each do |domain|
       domain.checks.each do |check|
         check.scanning!
-        RescanJob.perform_later(check.id)
+        PerformCheckJob.perform_later(check.id)
       end
     end
   end

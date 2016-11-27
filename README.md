@@ -3,7 +3,7 @@
 TODO:
 
 Rename DOMAINO --> EXPIRED
-
+Use domain WHOIS contacts for alerts
 
 ## API
 

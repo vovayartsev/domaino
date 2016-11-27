@@ -26,7 +26,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
-gem 'unirest'
+gem 'whois-parser'
 gem 'sprockets-webpack'
 gem 'responders'
 gem 'oj'
@@ -44,12 +44,12 @@ gem 'multi_json'
 
 group :development, :test do
   gem 'pry'
+  gem 'mocha'
 end
 
 group :development do
   gem 'web-console'
   gem 'listen'
-  gem 'mocha'
   # gem 'spring'
   # gem 'spring-watcher-listen'
 end
