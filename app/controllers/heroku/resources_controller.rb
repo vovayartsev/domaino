@@ -13,7 +13,8 @@ module Heroku
       resource = Portal.create!(resource_params.to_h)
       resource.create_settings!
 
-      FetchOwnerEmail.perform_later(resource.id) # because this is the only way to get user's email
+      FetchOwnerEmail.set(wait: 5.seconds).perform_later(resource.id)
+      InitialScanJob.set(wait: 10.seconds).perform_later(resource.id)
 
       render json: {
         :id => resource.id,
