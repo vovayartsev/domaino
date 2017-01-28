@@ -22,7 +22,7 @@ export function mapDomainsTableCell(cell) {
 
     case WARNING:
       return {
-        class: 'warning',
+        class: 'error',
         message: `Expires on ${cell.expiration}`
       }
 
