@@ -10,7 +10,9 @@ module Heroku
     end
 
     def create
-      resource = Resource.create!(resource_params.to_h)
+      resource = Portal.create!(resource_params.to_h)
+
+      FetchOwnerEmail.perform_later(resource.id) # because this is the only way to get user's email
 
       render json: {
         :id => resource.id,
@@ -20,13 +22,13 @@ module Heroku
     end
 
     def update
-      resource = Resource.find(params[:id])
+      resource = Portal.find(params[:id])
       resource.update!(resource_params.to_h)
       head 200
     end
 
     def destroy
-      resource = Resource.find(params[:id])
+      resource = Portal.find(params[:id])
       resource.destroy
       head 200
     end

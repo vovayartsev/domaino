@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   Heroku::Engine.routes.draw do
     resources :resources, only: [:show, :create, :update, :destroy]
     get 'sso_login', to: 'sso#login'
+    post 'sso_login', to: 'sso#login'
   end
 
   Dashboard::Engine.routes.draw do

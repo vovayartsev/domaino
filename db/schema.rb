@@ -41,9 +41,10 @@ ActiveRecord::Schema.define(version: 20170128180001) do
   create_table "portals", force: :cascade do |t|
     t.string   "plan"
     t.string   "email"
-    t.string   "heroku_uuid"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "heroku_id"
+    t.string   "uuid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "settings", force: :cascade do |t|
