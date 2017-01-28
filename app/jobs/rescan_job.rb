@@ -1,4 +1,4 @@
-class InitialScanJob < ApplicationJob
+class RescanJob < ApplicationJob
   queue_as :default
 
   def perform(portal_id)

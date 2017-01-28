@@ -13,6 +13,10 @@ class Portal < ApplicationRecord
     where(email: 'garbage_collector@domaino.herokuapps.com').first_or_create!
   end
 
+  def self.active_portal_ids
+    Portal.all.pluck(:id) - [gc_portal.id]
+  end
+
   private
 
   def create_new_domains(domain_names)

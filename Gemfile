@@ -47,6 +47,8 @@ gem "cells-rails"
 gem 'multi_json'
 gem 'slack-notifier'
 gem 'rest-client'
+gem 'sidekiq'
+gem 'rollbar'
 
 group :development, :test do
   gem 'pry'

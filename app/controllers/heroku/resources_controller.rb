@@ -14,7 +14,7 @@ module Heroku
       resource.create_settings!
 
       FetchOwnerEmail.set(wait: 5.seconds).perform_later(resource.id)
-      InitialScanJob.set(wait: 10.seconds).perform_later(resource.id)
+      RescanJob.set(wait: 10.seconds).perform_later(resource.id)
 
       render json: {
         :id => resource.id,
