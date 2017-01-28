@@ -46,6 +46,7 @@
 
   // UI logic: mapping state to UI classes
   this.preprocess = map((item) => {
+    console.log(item)
     return {
       name: item.name,
       dns: mapDomainsTableCell(item.dns),

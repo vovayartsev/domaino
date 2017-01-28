@@ -3,4 +3,4 @@ p
   = " " + mail_to(heroku_email)
 
 = simple_form_for model do |f|
-  = f.input :additional_emails, placeholder: "List of emails separated by spaces or commas"
+  = f.input :additional_emails, placeholder: "List of emails separated by spaces or commas", required: false

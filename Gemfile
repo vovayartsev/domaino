@@ -25,18 +25,21 @@ gem 'jquery-rails'
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
+gem 'email_validator'
 gem 'dotenv-rails'
-gem 'unirest'
+gem 'whois-parser'
 gem 'sprockets-webpack'
 gem 'responders'
 gem 'oj'
 gem 'readthis'
 gem 'hiredis'
+gem 'retriable'
 # gem 'sidekiq'
 gem 'whois'
 gem 'slim-rails'
 gem 'sucker_punch'
-gem 'trailblazer-rails'
+gem 'trailblazer-rails', "<2.0.0"
+gem 'trailblazer', '<2.0.0'
 gem 'trailblazer-cells'
 gem 'cells-slim'
 gem "cells-rails"
@@ -44,12 +47,12 @@ gem 'multi_json'
 
 group :development, :test do
   gem 'pry'
+  gem 'mocha'
 end
 
 group :development do
   gem 'web-console'
   gem 'listen'
-  gem 'mocha'
   # gem 'spring'
   # gem 'spring-watcher-listen'
 end

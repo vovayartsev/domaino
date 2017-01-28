@@ -40,13 +40,14 @@
 
     // "OK" button handler
     $('.ui.confirmation.button', this.root).api({
-      url: '/settings/sms',
+      url: `/settings/${this.opts.cell}`,
       method: 'PUT',
       beforeSend: (settings) => {
         settings.data = $('form', this.content).serialize();
         return settings;
       },
       onFailure: (html) => {
+        console.log("FAILED")
         this.content.innerHTML = html
       },
       onSuccess: () => {

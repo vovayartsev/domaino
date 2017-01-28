@@ -15,7 +15,7 @@ class Settings::Cell < Trailblazer::Cell
   private
 
   def settings_path(settings)
-    "/settings/current"
+    "/settings/#{self.class.name.demodulize.downcase}"
   end
   alias_method :reform_path, :settings_path
 end

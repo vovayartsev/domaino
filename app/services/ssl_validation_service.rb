@@ -2,7 +2,7 @@ require "socket"
 require "openssl"
 
 class SslValidationService
-  Result = Struct.new(:valid, :paid_till, :error)
+  Result = Struct.new(:available, :paid_till, :error)
 
   def call(host)
     Socket.tcp(host, 443, connect_timeout: 5) do |tcp_client|

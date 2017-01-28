@@ -1,5 +1,5 @@
 
-.ui.message
+//.ui.message
   h4.ui.header Alerts History
   .ui.relaxed.divided.list
     .item
@@ -25,19 +25,20 @@
           | Updated 34 mins ago
 
 
-.ui.hidden.divider
+//.ui.hidden.divider
 
 .ui.ignored.warning.message
   h4.ui.header
     | Human Intelligence
   p
-    | We'll make our best to contact you via all available
+    | When your SSL certificate or domain expiration date approaches,
+    |  real humans will reach out to you via all available
     |  channels, including contacts on your website.
 
-  p
-    small
-      = "Available for just $1/mo, "
-      a href="#" upgrade now
+  -#p
+  -#  small
+  -#    = "Available for just $1/mo, "
+  -#    a href="#" upgrade now
 
 .ui.hidden.divider
 
@@ -45,9 +46,12 @@
   h4.ui.header
     | Terms of Service
   p
-    |  TODO TODO TODO
+    | We'll do our best to notify you about any domain or certificate expirations,
+    |  however, we can't be responsible for your application uptime.
 
+  //p Please don't use this add-on for mission-critical applications, e.g. those which affect health or lives of people.
 
+  p Note: the service is provided in English only
 
 .ui.hidden.divider
 

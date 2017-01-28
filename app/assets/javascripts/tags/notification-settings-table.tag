@@ -51,7 +51,7 @@
           Human Intelligence
         </td>
         <td class={ disabled: !human_intelligence }>
-          { human_intelligence || "You didn't provide any devops contacts yet" }
+          { human_intelligence || "Any contacts found on your website" }
         </td>
         <td>
           <configuration-form title="Human Intelligence" cell="human"/>

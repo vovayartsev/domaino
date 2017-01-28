@@ -4,7 +4,7 @@ require 'minitest/mock'
 class PortalStartScanTest < ActiveSupport::TestCase
   test "updates domains list, creates checks and starts background jobs" do
     HerokuApiService.stub :get_domains, %w(domaino.com) do
-      RescanJob.stub :perform_later, nil do
+      PerformCheckJob.stub :perform_later, nil do
         portal = Portal::StartScan.(id: portals(:vova).id).model
 
         assert_equal %w(domaino.com), portal.domains.map(&:name)

@@ -4,6 +4,9 @@ class Settings::Update < Trailblazer::Operation
     property :additional_emails # TODO: validation
     property :human_intelligence # TODO: validation
 
+    validates :additional_emails, emails_array: true
+    validates :sms_recepient, sms: true
+
     def heroku_email
       model.portal.email
     end

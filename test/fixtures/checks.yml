@@ -2,14 +2,14 @@
 
 one:
   domain: google
-  kind: 1
+  kind: 1 # dns
   last_scan_requested_at: 2016-10-10 01:49:02
   last_scan_at: 2016-10-13 01:49:02
   status: 0
 
 two:
   domain: google
-  kind: 0
+  kind: 0 # ssl
   last_scan_requested_at: 2016-10-13 01:49:02
   last_scan_at: 2016-10-13 01:49:02
   status: 1
