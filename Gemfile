@@ -45,6 +45,7 @@ gem 'trailblazer-cells'
 gem 'cells-slim'
 gem "cells-rails"
 gem 'multi_json'
+gem 'slack-notifier'
 
 group :development, :test do
   gem 'pry'

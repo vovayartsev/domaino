@@ -5,13 +5,34 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-desc "List of all domains with alerts"
-task :alerts => :environment do
+def query_domain_names_with_alerts
   domain_ids = Check.active_alerts.select(:domain_id)
-  domain_names = Domain.where(id: domain_ids).order(:name).pluck(:name)
-  if domain_names.any?
-    puts domain_names
-  else
-    puts "Congratulations. No alerts found"
+  Domain.where(id: domain_ids).order(:name).pluck(:name)
+end
+
+def slack(message)
+  notifier = Slack::Notifier.new ENV.fetch('SLACK_WEBHOOK')
+  notifier.ping message
+end
+
+namespace :alerts do
+  desc "List of all domains with alerts"
+  task :show => :environment do
+    domain_names = query_domain_names_with_alerts
+    if domain_names.any?
+      puts domain_names
+    else
+      puts "Congratulations. No alerts found"
+    end
+  end
+
+  desc "Sends alerts to Slack"
+  task :slack => :environment do
+    domain_names = query_domain_names_with_alerts
+    if domain_names.any?
+      slack "DOMAINS WITH ALERTS:\n" + domain_names.join("\n")
+    else
+      slack "Congratulations. No alerts found"
+    end
   end
 end
