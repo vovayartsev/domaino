@@ -12,6 +12,7 @@ class Check::Perform < Trailblazer::Operation
         error_message: result.error&.message,
         expiration: result.paid_till
     )
+    model.update!(acknowledged: false) if model.ok?
     notify!
   end
 

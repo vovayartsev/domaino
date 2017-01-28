@@ -10,21 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030202727) do
+ActiveRecord::Schema.define(version: 20170128180001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "checks", force: :cascade do |t|
-    t.integer  "domain_id",                          null: false
-    t.integer  "kind",                               null: false
+    t.integer  "domain_id",                              null: false
+    t.integer  "kind",                                   null: false
     t.datetime "last_scan_requested_at"
     t.datetime "last_scan_at"
-    t.integer  "status",                 default: 0, null: false
+    t.integer  "status",                 default: 0,     null: false
     t.date     "expiration"
     t.string   "error_message"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "acknowledged",           default: false, null: false
     t.index ["domain_id"], name: "index_checks_on_domain_id", using: :btree
   end
 
