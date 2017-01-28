@@ -8,3 +8,8 @@ vova:
   plan: 'test'
   email: 'vovayartsev@gmail.com'
   heroku_uuid: '123123123123123123123123123123123123123123123123'
+
+other:
+  plan: 'test'
+  email: 'other@example.com'
+  heroku_uuid: '7777777777777777777777777777'

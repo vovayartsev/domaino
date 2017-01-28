@@ -6,6 +6,6 @@ class HerokuApiService
 
   def get_domains(portal_id)
     # raise "not implemented"
-    %w(google.com apple.com)
+    %w(google.com apple.com dockhero.io)
   end
 end

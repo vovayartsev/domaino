@@ -3,3 +3,8 @@
 vova_settings:
   portal: vova
   sms_recepient: "+1-555-5555555"
+
+other_settings:
+  portal: other
+  sms_recepient: "+1-555-5555555"
+  additional_emails: 'vovayartsev@gmail.com vlad.yartsev@castle.co'

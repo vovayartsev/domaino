@@ -2,7 +2,7 @@ class Check::Perform < Trailblazer::Operation
   include Model
   model Check, :update
 
-  WARNING_THRESHOLD = 14 # days
+  WARNING_THRESHOLD = 30 # days
 
   def process(params)
     result = checker.call(model.domain.name)
