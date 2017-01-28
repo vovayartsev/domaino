@@ -5,7 +5,7 @@ class CreateChecks < ActiveRecord::Migration[5.0]
       t.integer :kind, null: false
       t.datetime :last_scan_requested_at
       t.datetime :last_scan_at
-      t.integer :status, null: false, default: 0
+      t.integer :status, null: false, default: 0, index: true
       t.date :expiration
       t.string :error_message
 

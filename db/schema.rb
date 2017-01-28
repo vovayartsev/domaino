@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170128180001) do
     t.datetime "updated_at",                             null: false
     t.boolean  "acknowledged",           default: false, null: false
     t.index ["domain_id"], name: "index_checks_on_domain_id", using: :btree
+    t.index ["status"], name: "index_checks_on_status", using: :btree
   end
 
   create_table "domains", force: :cascade do |t|
