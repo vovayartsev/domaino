@@ -2,7 +2,6 @@ require "socket"
 require "openssl"
 
 class SslValidationService
-  # TODO: valid -> available
   Result = Struct.new(:available, :paid_till, :error)
 
   def call(host)

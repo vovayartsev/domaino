@@ -10,7 +10,7 @@ class DnsValidationServiceTest < ActiveSupport::TestCase
   test "invalid domain" do
     result = enquire('asdfasdfasdfasdfasdasdf2222.ru')
     assert_equal false, result.available
-    assert_equal nil, result.paid_till
+    assert_nil result.paid_till
   end
 
   private

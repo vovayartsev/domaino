@@ -36,7 +36,8 @@ gem 'hiredis'
 gem 'whois'
 gem 'slim-rails'
 gem 'sucker_punch'
-gem 'trailblazer-rails'
+gem 'trailblazer-rails', "<2.0.0"
+gem 'trailblazer', '<2.0.0'
 gem 'trailblazer-cells'
 gem 'cells-slim'
 gem "cells-rails"

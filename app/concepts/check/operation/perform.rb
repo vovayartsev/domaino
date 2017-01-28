@@ -12,6 +12,7 @@ class Check::Perform < Trailblazer::Operation
         error_message: result.error&.message,
         expiration: result.paid_till
     )
+    notify!
   end
 
   private
@@ -30,6 +31,6 @@ class Check::Perform < Trailblazer::Operation
   end
 
   def notify!
-    DomainsListChannel.broadcast_to(model.portal, {})
+    DomainsListChannel.broadcast_to(model.domain.portal, {})
   end
 end

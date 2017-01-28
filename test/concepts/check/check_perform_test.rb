@@ -10,7 +10,7 @@ class CheckPerformTest < ActiveSupport::TestCase
     check.reload
     assert check.ok?
     assert_equal expected_expiration, check.expiration
-    assert_equal nil, check.error_message
+    assert_nil check.error_message
   end
 
   test "dns check" do
@@ -22,7 +22,12 @@ class CheckPerformTest < ActiveSupport::TestCase
     check.reload
     assert check.ok?
     assert_equal expected_expiration, check.expiration
-    assert_equal nil, check.error_message
+    assert_nil check.error_message
+  end
+
+  def teardown
+    DnsValidationService.any_instance.unstub(:call)
+    SslValidationService.any_instance.unstub(:call)
   end
 
   private

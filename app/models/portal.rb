@@ -17,7 +17,7 @@ class Portal < ApplicationRecord
 
   def create_new_domains(domain_names)
     domain_names.each do |name|
-      domains << Domain.new_with_defaul_checks(name: name)
+      domains << Domain.new_with_default_checks(name: name)
     end
   end
 
