@@ -11,6 +11,7 @@ module Heroku
 
     def create
       resource = Portal.create!(resource_params.to_h)
+      resource.create_settings!
 
       FetchOwnerEmail.perform_later(resource.id) # because this is the only way to get user's email
 
