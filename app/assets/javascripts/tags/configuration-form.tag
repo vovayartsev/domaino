@@ -47,7 +47,6 @@
         return settings;
       },
       onFailure: (html) => {
-        console.log("FAILED")
         this.content.innerHTML = html
       },
       onSuccess: () => {

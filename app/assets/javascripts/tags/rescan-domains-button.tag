@@ -10,7 +10,8 @@
     this.on('mount', function(){
       $('button', this.root).api({
         url: '/scans.json',
-        method: 'POST'
+        method: 'POST',
+        onFailure: data => console.error("API ERROR:", data)
       })
     })
   </script>

@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     resources :settings, only: [:edit, :update]
   end
 
+  if ENV['SIDEKIQ_WEB'] == 'YES' || Rails.env.development?
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   mount Heroku::Engine => '/heroku', as: 'heroku'
   mount Dashboard::Engine => '/', as: 'dashboard'
 end
