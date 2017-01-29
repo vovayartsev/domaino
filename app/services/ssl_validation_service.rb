@@ -17,7 +17,7 @@ class SslValidationService
       issuer = certprops.select { |name, data, type| name == "O" }.first[1]
       Result.new(true, cert.not_after.to_date, nil)
     end
-  rescue Errno::ECONNREFUSED, SocketError
+  rescue Errno::ECONNREFUSED, SocketError, OpenSSL::SSL::SSLError
     Result.new(false, nil, $!)
   end
 end
