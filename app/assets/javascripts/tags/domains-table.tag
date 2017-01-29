@@ -20,7 +20,7 @@
       </td> </tr>
     </tbody>
 
-    <tbody if={ loaded }>
+    <tbody if={ loaded && list.length > 0 }>
       <tr each={ preprocess(list) }>
         <td>
           <a href="http://{name}/" target='_blank'>{ name }</a>
@@ -35,6 +35,18 @@
         </td>
       </tr>
     </tbody>
+
+    <tbody if={ loaded && list.length == 0 }>
+      <tr>
+        <td colspan=3 class="disabled">
+            No custom domains found for this app. <br>
+            Please add some domains with
+            <strong>heroku domains:add example.com</strong>,
+            then click <strong>Scan Domains</strong> button above
+        </td>
+      </tr>
+    </tbody>
+
   </table>
 
   <script>
@@ -46,14 +58,12 @@
 
   // UI logic: mapping state to UI classes
   this.preprocess = map((item) => {
-    console.log(item)
     return {
       name: item.name,
       dns: mapDomainsTableCell(item.dns),
       ssl: mapDomainsTableCell(item.ssl)
     };
   })
-
   </script>
 
 </domains-table>

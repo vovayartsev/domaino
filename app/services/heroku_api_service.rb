@@ -23,9 +23,9 @@ class HerokuApiService
 
   def get_domains(portal_id)
     if ENV['HEROKU_USERNAME']
-      app_info(portal_id).domains
+      app_info(portal_id).domains.reject{|d| d =~ /herokuapp\.com$/}
     else
-      %w(google.com apple.com dockhero.io)  # dev environment
+    %w(google.com apple.com dockhero.io)  # dev environment
     end
   end
 end
