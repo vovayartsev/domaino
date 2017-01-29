@@ -3,7 +3,11 @@ class DnsValidationService
   Result = Struct.new(:available, :paid_till, :error)
 
   def call(tld)
-    record = retriable { Whois.whois(tld).parser }
+    tld = tld.split('.')[-2..-1].join('.')
+
+    record = Rails.cache.fetch(tld, expires_in: 5.minutes) do
+      retriable { Whois.whois(tld).parser }
+    end
 
     if record.registered?
       Result.new(true, record.expires_on.to_date, nil)
