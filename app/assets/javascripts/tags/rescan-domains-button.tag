@@ -6,12 +6,13 @@
 
   <script>
     import $ from '../jq';
+    import { apiError } from '../utils/notify';
 
     this.on('mount', function(){
       $('button', this.root).api({
         url: '/scans.json',
         method: 'POST',
-        onFailure: data => console.error("API ERROR:", data)
+        onFailure: apiError
       })
     })
   </script>
