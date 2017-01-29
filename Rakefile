@@ -39,7 +39,7 @@ end
 
 desc "Scan all domains"
 task :rescan => :environment do
-  Portal.active_portal_ids do |portal_id|
+  Portal.active_portal_ids.each do |portal_id|
     RescanJob.perform_later(portal_id)
   end
 end
