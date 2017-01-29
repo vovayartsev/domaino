@@ -7,7 +7,7 @@ Rails.application.load_tasks
 
 def query_domain_names_with_alerts
   domain_ids = Check.active_alerts.select(:domain_id)
-  Domain.where(id: domain_ids).order(:name).pluck(:name)
+  Domain.active.where(id: domain_ids).order(:name).pluck(:name)
 end
 
 def slack(message)
