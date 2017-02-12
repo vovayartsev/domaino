@@ -5,6 +5,8 @@ class SslValidationService
   Result = Struct.new(:available, :paid_till, :error)
 
   def call(host)
+    host = host.gsub(/^\*/, 'www') # to support wildcard domains properly
+
     Socket.tcp(host, 443, connect_timeout: 5) do |tcp_client|
       ssl_client = OpenSSL::SSL::SSLSocket.new(tcp_client)
       ssl_client.hostname = host
