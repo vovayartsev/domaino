@@ -43,3 +43,8 @@ task :rescan => :environment do
     RescanJob.perform_later(portal_id)
   end
 end
+
+desc "Garbage Collector"
+task :gc => :environment do
+  Portal.gc_portal.domains.where('updated_at < ?', 10.minutes.ago).destroy_all
+end
