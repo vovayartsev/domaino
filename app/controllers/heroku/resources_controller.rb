@@ -31,6 +31,7 @@ module Heroku
 
     def destroy
       resource = Portal.find(params[:id])
+      resource.domains.update_all(portal_id: Portal.gc_portal.id) # domains will be garbage-collected later by "rake gc"
       resource.destroy
       head 200
     end

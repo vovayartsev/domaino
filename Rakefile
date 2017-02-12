@@ -48,3 +48,10 @@ desc "Garbage Collector"
 task :gc => :environment do
   Portal.gc_portal.domains.where('updated_at < ?', 10.minutes.ago).destroy_all
 end
+
+desc "Lists active users and their domains"
+task :usage => :environment do
+  Portal.includes(:domains).each do |p|
+    puts "\n#{p.email} \t #{p.domains.map(&:name).join(' ')}"
+  end
+end
