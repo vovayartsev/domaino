@@ -2,8 +2,6 @@ class Check::Perform < Trailblazer::Operation
   include Model
   model Check, :update
 
-  WARNING_THRESHOLD = 30 # days
-
   def process(params)
     result = checker.call(model.domain.name)
     model.update!(
@@ -22,7 +20,7 @@ class Check::Perform < Trailblazer::Operation
     return :na if !result.available
     remaining_days = Integer(result.paid_till - Date.today)
     return :expired if remaining_days < 0
-    return :warning if remaining_days < WARNING_THRESHOLD
+    return :warning if remaining_days < warning_threshold
     return :ok
   end
 
@@ -33,5 +31,9 @@ class Check::Perform < Trailblazer::Operation
 
   def notify!
     DomainsListChannel.broadcast_to(model.domain.portal, {})
+  end
+
+  def warning_threshold
+    Settings.find_by!(portal_id: model.domain.portal_id).deadline
   end
 end
