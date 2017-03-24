@@ -3,6 +3,7 @@
 vova_settings:
   portal: vova
   sms_recepient: "+1-555-5555555"
+  deadline: 8
 
 other_settings:
   portal: other

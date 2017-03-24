@@ -12,6 +12,9 @@ class Settings::Cell < Trailblazer::Cell
   class Human < self
   end
 
+  class Deadline < self
+  end
+
   private
 
   def settings_path(settings)

@@ -8,9 +8,10 @@ class Settings::Show < Trailblazer::Operation
       property :sms_recepient
       property :emails, exec_context: :decorator
       property :human_intelligence
+      property :deadline
 
       def emails
-        (represented.additional_emails || "").split + [represented.portal.email]
+        (represented.additional_emails || '').split + [represented.portal.email]
       end
     end
   end
@@ -18,5 +19,4 @@ class Settings::Show < Trailblazer::Operation
   def process(params)
     @model = Settings.where(portal_id: params[:portal_id]).first!
   end
-
 end

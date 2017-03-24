@@ -3,9 +3,11 @@ class Settings::Update < Trailblazer::Operation
     property :sms_recepient # TODO: validation
     property :additional_emails # TODO: validation
     property :human_intelligence # TODO: validation
+    property :deadline
 
     validates :additional_emails, emails_array: true
     validates :sms_recepient, sms: true
+    validates :deadline, numericality: true
 
     def heroku_email
       model.portal.email

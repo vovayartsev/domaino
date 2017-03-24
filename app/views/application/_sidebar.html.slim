@@ -51,12 +51,15 @@
 
   //p Please don't use this add-on for mission-critical applications, e.g. those which affect health or lives of people.
 
-  p Note: the service is provided in English only
+  p The service (and notifications by phone) is provided in English only.
 
 .ui.hidden.divider
 
 .ui.message
   h4.ui.header Feedback and Support
   p
-    | Please email me:
+    | Please use
+    span<>= link_to "Heroku Support portal", "https://help.heroku.com/tickets/new", target: '_blank'
+  p
+    | or email me directly at
     span<>= mail_to 'vovayartsev@gmail.com'
