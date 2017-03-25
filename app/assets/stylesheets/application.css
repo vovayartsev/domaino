@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+h1.gauge.ui.header {
+  font-size: 3.6rem;
+}
