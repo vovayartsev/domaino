@@ -1,4 +1,4 @@
-<gauge>
+<%-- <gauge>
   <div id="mainGauge"></div>
 
   <script>
@@ -39,4 +39,4 @@
     }
   </style>
 
-</gauge>
+</gauge> --%>

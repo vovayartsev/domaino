@@ -22,6 +22,7 @@ class Settings::Update < Trailblazer::Operation
       contract.save
       # TODO: callbacks
       SettingsChannel.broadcast_to(model, {})
+      SummaryChannel.broadcast_to(model.portal, {})
     end
   end
 

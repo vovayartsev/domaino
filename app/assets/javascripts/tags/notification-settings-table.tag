@@ -63,10 +63,8 @@
   </table>
 
   <script>
-  import {settingsSelector} from '../selectors'
-
-  this.subscribe(settingsSelector)
-
+    import {settingsSelector} from '../selectors'
+    this.subscribe(settingsSelector)
   </script>
 
   <style>

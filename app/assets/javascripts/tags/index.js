@@ -1,6 +1,7 @@
+import './raw.tag'
 import './domains-table.tag'
 import './rescan-domains-button.tag'
 import './notification-settings-table.tag'
 import './configuration-form.tag'
 import './notifications-deadline-explanation-text.tag'
-import './gauge.tag'
+import './jumbo-message.tag'

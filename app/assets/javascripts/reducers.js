@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { merge, pick } from 'ramda';
-import { DOMAINS_LIST_CHANNEL, SETTINGS_CHANNEL } from './actions';
+import { SUMMARY_CHANNEL, DOMAINS_LIST_CHANNEL, SETTINGS_CHANNEL } from './actions';
 
 const DEFAULT_DOMAINS_STATE = {
   loaded: false,
@@ -11,6 +11,10 @@ const DEFAULT_SETTINGS_STATE = {
   herokuEmailNotifications: true,
   customEmails: "",
   loaded: false
+}
+
+const DEFAULT_SUMMARY_STATE = {
+  status: null
 }
 
 function domainsReducer(state = DEFAULT_DOMAINS_STATE, action) {
@@ -31,7 +35,18 @@ function settingsReducer(state = DEFAULT_SETTINGS_STATE, action) {
   }
 }
 
+function summaryReducer(state = DEFAULT_SUMMARY_STATE, action) {
+  switch (action.type) {
+    case SUMMARY_CHANNEL:
+      return action.representation;
+    default:
+      return state;
+  }
+  return state
+}
+
 export default combineReducers({
   domains: domainsReducer,
-  settings: settingsReducer
+  settings: settingsReducer,
+  summary: summaryReducer
 })

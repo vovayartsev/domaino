@@ -4,4 +4,5 @@ class Check < ApplicationRecord
   enum status: [ :scanning, :expired, :warning, :ok, :na ]
 
   scope :active_alerts, -> { where(status: 'warning', acknowledged: false) }
+  scope :for_portal, ->(portal) { where(domain_id: portal.domains.select(:id)) }
 end
