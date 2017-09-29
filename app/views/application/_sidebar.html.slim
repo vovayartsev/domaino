@@ -1,65 +1,53 @@
-
-//.ui.message
-  h4.ui.header Alerts History
-  .ui.relaxed.divided.list
-    .item
-      i.large.github.middle.aligned.icon
-      .content
-        a.header
-          | apple.com
-        .description
-          | Updated 10 mins ago
-    .item
-      i.large.github.middle.aligned.icon
-      .content
-        a.header
-          | google.com
-        .description
-          | Updated 22 mins ago
-    .item
-      i.large.github.middle.aligned.icon
-      .content
-        a.header
-          | yandex.ru
-        .description
-          | Updated 34 mins ago
-
-
-//.ui.hidden.divider
-
-.ui.ignored.warning.message
-  h4.ui.header
-    | Human Intelligence
+.ui.segment
+  h3.ui.header
+    i.pointing.left.icon
+    | HOW IT WORKS
   p
-    | When your SSL certificate or domain expiration date approaches,
-    |  real humans will reach out to you via all available
+    span.ui.green.empty.circular.label
+    strong<> Fresh: 8+ days remain
+    br
+    | We keep re-scanning your domains periodically to detect changes
+
+  p
+    span.ui.orange.empty.circular.label
+    strong<> Expires in 7 days or less
+    br
+    | We'll be notifying you via e-mail and SMS, but not too insistently
+
+  p
+    span.ui.red.empty.circular.label
+    strong<> Expires in 3 days or less
+    br
+    |  Real <strong>humans</strong> will reach out to you via all available
     |  channels, including contacts on your website.
 
-  -#p
-  -#  small
-  -#    = "Available for just $1/mo, "
-  -#    a href="#" upgrade now
+  p
+    configuration-form title="Configure Deadlines" cell="deadline" text="Configure Deadlines..."
 
 .ui.hidden.divider
 
 .ui.message
   h4.ui.header
-    | Terms of Service
-  p
-    | We'll do our best to notify you about any domain or certificate expirations,
-    |  however, we can't be responsible for your application uptime.
+    | Useful links
+  .ui.list
+    .item
+      i.help.icon
+      .content = link_to "Documentation", "", target: '_blank'
+    .item
+      i.legal.icon
+      .content = link_to "Terms of Services", "", target: '_blank'
+    .item
+      i.lock.icon
+      .content = link_to "Letsencrypt Heroku plugin", "", target: '_blank'
 
-  //p Please don't use this add-on for mission-critical applications, e.g. those which affect health or lives of people.
-
-  p The service (and notifications by phone) is provided in English only.
-
-.ui.hidden.divider
+  .ui.hidden.divider
 
 .ui.message
   h4.ui.header Feedback and Support
-  p
-    | Please use
-    span<>= link_to "Heroku Support portal", "https://help.heroku.com/tickets/new", target: '_blank'
-  p
-    | or email me directly at
-    span<>= mail_to 'vovayartsev@gmail.com'
+  .ui.list
+    .item
+      i.linkify.icon
+      .content = link_to "Heroku Support portal", "https://help.heroku.com/tickets/new", target: '_blank'
+    .item
+      i.mail.icon
+      .content = mail_to 'vovayartsev@gmail.com'

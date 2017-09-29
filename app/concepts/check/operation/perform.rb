@@ -31,6 +31,7 @@ class Check::Perform < Trailblazer::Operation
 
   def notify!
     DomainsListChannel.broadcast_to(model.domain.portal, {})
+    SummaryChannel.broadcast_to(model.domain.portal, {})
   end
 
   def warning_threshold

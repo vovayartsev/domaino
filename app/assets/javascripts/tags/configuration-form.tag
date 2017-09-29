@@ -1,5 +1,5 @@
 <configuration-form>
-  <a href="javascript: void(0);" onclick={ onclick }>configure...</a>
+  <a href="javascript: void(0);" onclick={ onclick }>{ opts.text || "configure..." }</a>
 
   <div class="ui modal">
     <i class="close icon"></i>

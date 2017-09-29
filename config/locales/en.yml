@@ -21,3 +21,20 @@
 
 en:
   hello: "Hello world"
+
+  jumbos:
+    ok:
+      header: "Everything's fresh"
+      message: "The nearest expiration is <strong>%{ttl} days</strong> away"
+    warning:
+      header: "Time to update"
+      message: "The nearest expiration is <strong>%{ttl} days</strong> away"
+    expired:
+      header: "Alarm! Urgent action required!"
+      message: "The nearest expiration is just <strong>%{ttl} days</strong> away"
+    not_configured:
+      header: "Not Configured"
+      message: "Please add custom domains to your Heroku app"
+    na:
+      header: "Not Available"
+      message: "We could not fetch expiration information from your domain(s)"

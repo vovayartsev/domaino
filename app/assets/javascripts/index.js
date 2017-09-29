@@ -7,6 +7,10 @@ import 'whatwg-fetch'
 import 'semantic-ui-css/semantic.css';
 import './tags'  // riot
 
+// used for Gauge
+window.Raphael = require('raphael');
+require('justgage');
+
 import $ from './jq' // custom jQuery + plugins
 
 import riot from 'riot'

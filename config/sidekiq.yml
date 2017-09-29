@@ -1,4 +1,5 @@
 ---
 :concurrency: 5
+:retry: 2
 :queues:
   - default
